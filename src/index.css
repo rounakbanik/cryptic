@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+@layer base {
+    label {
+      @apply text-white
+    }
+    select, textarea, input, option  {
+        @apply bg-black border-2 border-neon p-2
+    }
+  }
