@@ -2,6 +2,9 @@ import { Fragment, useState } from "react";
 import Form from "./components/Form";
 import Header from './components/Header';
 import Output from "./components/Output";
+import caesar from "./ciphers/caesar";
+import monosubstitution from "./ciphers/monosubstitution";
+import vigenere from "./ciphers/vigenere";
 
 function App() {
 
@@ -10,6 +13,13 @@ function App() {
 
   const formSubmitHandler = (data) => {
     if (!firstSubmit) setFirstSubmit(true);
+
+    let func;
+    if (data.cipher === 'caesar') func = caesar;
+    else if (data.cipher === 'monosubstitution') func = monosubstitution;
+    else func = vigenere;
+
+    data.text = func(data.text, data.key, data.operation);
     setOutputData(data);
 
   }

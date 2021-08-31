@@ -16,7 +16,7 @@ function Form(props) {
         setError(false);
 
         // Do form validation
-        const ciphers = ['caesar', 'monosubstitution', 'polysubstitution'];
+        const ciphers = ['caesar', 'monosubstitution', 'vigenere'];
         const operations = ['encrypt', 'decrypt']
 
         if (!ciphers.includes(cipher) || !operations.includes(operation) || inputText.trim().length === 0) {
